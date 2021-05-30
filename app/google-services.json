@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "185986127390",
+    "project_id": "tema3android",
+    "storage_bucket": "tema3android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185986127390:android:5dbef56f53cda6ed8c400f",
+        "android_client_info": {
+          "package_name": "com.example.tema3android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "185986127390-i9mfj5b13g9khkhmvc30a8vvcr6dg5f3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcHm26sOfZR9Q4i_CztTH4G9zr_z2jeSI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "185986127390-i9mfj5b13g9khkhmvc30a8vvcr6dg5f3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

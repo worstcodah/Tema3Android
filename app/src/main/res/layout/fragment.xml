@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_blue">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/title_et"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/edit_text_height"
+            android:hint="@string/title_hint" />
+
+        <EditText
+            android:id="@+id/author_et"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/edit_text_height"
+            android:hint="@string/author_hint" />
+
+        <EditText
+            android:id="@+id/description_et"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/edit_text_height"
+            android:hint="@string/description_hint" />
+
+        <Button
+            android:id="@+id/add_update_button"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/button_height"
+            android:text="@string/button_text" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

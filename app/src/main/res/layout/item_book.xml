@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_red">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/green"
+        app:cardCornerRadius="@dimen/book_card_corner_radius"
+        app:cardElevation="@dimen/book_card_elevation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/linear_layout_lateral_margin"
+                android:layout_marginRight="@dimen/linear_layout_lateral_margin"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/label_margin_right"
+                    android:layout_marginRight="@dimen/label_margin_right"
+                    android:text="@string/title_label" />
+
+                <TextView
+                    android:id="@+id/book_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:minHeight="@dimen/text_view_height" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/linear_layout_lateral_margin"
+                android:layout_marginRight="@dimen/linear_layout_lateral_margin"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/label_margin_right"
+                    android:layout_marginRight="@dimen/label_margin_right"
+                    android:text="@string/author_label" />
+
+                <TextView
+                    android:id="@+id/book_author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:minHeight="@dimen/text_view_height" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/description_lateral_margin"
+                android:layout_marginRight="@dimen/description_lateral_margin"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="800">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/label_margin_right"
+                    android:layout_marginRight="@dimen/label_margin_right"
+                    android:layout_weight="1"
+                    android:text="@string/description_label" />
+
+
+                <TextView
+                    android:id="@+id/book_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/book_delete_button"
+                    android:layout_weight="798"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxLines="3"
+                    android:minHeight="@dimen/text_view_height" />
+
+                <Button
+                    android:id="@+id/book_delete_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/delete_button_margin_left"
+                    android:layout_marginLeft="@dimen/delete_button_margin_left"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/book_delete_button_label"
+                    android:textSize="@dimen/delete_button_text_size" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

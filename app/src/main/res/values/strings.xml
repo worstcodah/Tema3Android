@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Tema3Android</string>
+    <string name="title_hint">Book Title</string>
+    <string name="title_label">Title:</string>
+    <string name="author_label">Author:</string>
+    <string name="author_hint">Book Author</string>
+    <string name="description_label">Description:</string>
+    <string name="description_hint">Book Description</string>
+    <string name="button_text">Add/Update</string>
+    <string name="book_delete_button_label">Delete</string>
+    <string name="selected_book_tv_label"><b>Selected book info</b></string>
+</resources>
