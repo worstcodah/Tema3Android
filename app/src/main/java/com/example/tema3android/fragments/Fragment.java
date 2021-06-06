@@ -2,7 +2,6 @@ package com.example.tema3android.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tema3android.R;
 import com.example.tema3android.adapters.MyAdapter;
+import com.example.tema3android.constants.Constants;
 import com.example.tema3android.helper.Validations;
 import com.example.tema3android.interfaces.IActivityFragmentCommunication;
 import com.example.tema3android.interfaces.IOnItemClickListener;
@@ -118,12 +118,13 @@ public class Fragment extends androidx.fragment.app.Fragment implements IOnItemC
                 } else {
                     databaseReference.push().setValue(book);
                     bookList.add(book);
+                    Toast.makeText(getContext(), Constants.SUCCESSFUL_ADDITION_MESSAGE, Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getContext(), "Add/update canceled!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), Constants.CANCELLED_ADD_UPDATE_MESSAGE, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -136,9 +137,9 @@ public class Fragment extends androidx.fragment.app.Fragment implements IOnItemC
         hashMap.put("description", book.getDescription());
         databaseReference.child(key).updateChildren(hashMap).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
-                Toast.makeText(getContext(), "Succesful update!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), Constants.SUCCESSFUL_UPDATE_MESSAGE, Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(getContext(), "Update failed!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), Constants.FAILED_UPDATE_MESSAGE, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -161,10 +162,9 @@ public class Fragment extends androidx.fragment.app.Fragment implements IOnItemC
                         if (title.equals(book.getTitle())) {
                             databaseReference.child(dataSnapshot.getKey()).removeValue().addOnCompleteListener(task -> {
                                 if (task.isSuccessful()) {
-                                    new Handler().post(() -> Toast.makeText(getContext(), "Succesful deletion!", Toast.LENGTH_SHORT).show());
-
+                                    Toast.makeText(getContext(), Constants.SUCCESSFUL_DELETION_MESSAGE, Toast.LENGTH_SHORT).show();
                                 } else {
-                                    Toast.makeText(getActivity().getApplicationContext(), "Deletion failed!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getContext(), Constants.FAILED_DELETION_MESSAGE, Toast.LENGTH_SHORT).show();
                                 }
                             });
                         }
@@ -175,7 +175,7 @@ public class Fragment extends androidx.fragment.app.Fragment implements IOnItemC
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(getContext(), "Deletion canceled!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), Constants.CANCELLED_DELETION_MESSAGE, Toast.LENGTH_SHORT).show();
             }
         });
     }
